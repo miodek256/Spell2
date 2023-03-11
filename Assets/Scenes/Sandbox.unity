@@ -169,6 +169,7 @@ GameObject:
   - component: {fileID: 330585544}
   - component: {fileID: 330585547}
   - component: {fileID: 330585548}
+  - component: {fileID: 330585549}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -282,7 +283,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8bb17c5b48a8c764ca88e72d6d3560c1, type: 3}
   m_Name: 
@@ -291,6 +292,18 @@ MonoBehaviour:
   cameraHeight: 50
   cameraDistance: 5
   cameraAngle: 0
+--- !u!114 &330585549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 330585543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e48733817cd2a03419f40b70962b9d17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -754,7 +767,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1000011841440206, guid: 0ed203d298c050b49bfabe788790e1c2, type: 3}
       propertyPath: m_Name
-      value: 4 Side Diamond (1)
+      value: Diament
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000011841440206, guid: 0ed203d298c050b49bfabe788790e1c2, type: 3}
+      propertyPath: m_TagString
+      value: diament
       objectReference: {fileID: 0}
     - target: {fileID: 4000012861777782, guid: 0ed203d298c050b49bfabe788790e1c2, type: 3}
       propertyPath: m_RootOrder
