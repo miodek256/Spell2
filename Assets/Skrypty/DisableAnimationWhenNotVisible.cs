@@ -5,28 +5,35 @@ using UnityEngine;
 public class DisableAnimationWhenNotVisible : MonoBehaviour
 {
     private Animator animator;
-    private new Renderer renderer;
     private AnimationScript animationScript;
 
     void Start()
     {
         animator = GetComponent<Animator>();
-        renderer = GetComponent<Renderer>();
         animationScript = GetComponent<AnimationScript>();
     }
 
     void Update()
     {
-        // Sprawdzenie, czy obiekt jest widoczny przez kamerê
-        if (renderer.isVisible)
+        // Pobranie pozycji obiektu w przestrzeni œwiata
+        Vector3 screenPoint = Camera.main.WorldToViewportPoint(transform.position);
+
+        // Sprawdzenie, czy obiekt jest widoczny na ekranie kamery
+        bool onScreen = screenPoint.z > 0 && screenPoint.x > 0 && screenPoint.x < 1 && screenPoint.y > 0 && screenPoint.y < 1;
+
+        // Sprawdzenie, czy skrypt animacji jest przypisany do obiektu
+        if (animationScript != null)
         {
             // Jeœli obiekt jest widoczny, w³¹cz skrypt animacji
-            animationScript.enabled = true;
-        }
-        else
-        {
+            if (onScreen)
+            {
+                animationScript.enabled = true;
+            }
             // Jeœli obiekt nie jest widoczny, wy³¹cz skrypt animacji
-            animationScript.enabled = false;
+            else
+            {
+                animationScript.enabled = false;
+            }
         }
     }
 }
