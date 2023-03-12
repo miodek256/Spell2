@@ -11,7 +11,6 @@ public class MoveModified : MonoBehaviour
 	public float AddRunSpeed = 1;
 	public float AddWalkSpeed = 1;
 	private bool hasAniComp = false;
-
 	// Use this for initialization
 	void Start()
 	{
@@ -22,13 +21,11 @@ public class MoveModified : MonoBehaviour
 		}
 
 	}
-
+	
 	void Move()
 	{
 		float speed = 0.0f;
 		float add = 0.0f;
-
-
 
 		if (hasAniComp == true)
 		{
@@ -56,11 +53,12 @@ public class MoveModified : MonoBehaviour
 				speed = Time.deltaTime * add;
 				transform.Translate(0, 0, speed);
 			}
+			
 		}
-
-
-
+			
 	}
+
+
 
 	bool CheckAniClip(string clipname)
 	{
@@ -71,6 +69,8 @@ public class MoveModified : MonoBehaviour
 
 		return false;
 	}
+	
+	
 
 	// Update is called once per frame
 	void Update()
